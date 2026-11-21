@@ -15,8 +15,7 @@
 
 <!-- ArcGIS theme + Map Components (interactive map) + Embeddable Components (fallback) -->
 <link id="arcgisTheme" rel="stylesheet" href="https://js.arcgis.com/5.0/esri/themes/dark/main.css">
-<script type="module" src="https://js.arcgis.com/5.0/map-components/"></script>
-<script type="module" src="https://js.arcgis.com/5.0/embeddable-components/"></script>
+<script type="module" src="https://js.arcgis.com/5.0/"></script>
 
 <style>
 :root{
@@ -419,7 +418,7 @@ footer{text-align:center;padding:30px 0;color:var(--muted);font-size:.85rem;bord
 
           <div class="group-title" style="margin-top:18px">Standard legend</div>
           <details class="native"><summary>Show ArcGIS legend</summary>
-            <arcgis-legend reference-element="#view"></arcgis-legend>
+            <arcgis-legend reference-element="view"></arcgis-legend>
           </details>
         </div>
       </aside>
@@ -427,14 +426,14 @@ footer{text-align:center;padding:30px 0;color:var(--muted);font-size:.85rem;bord
       <div class="mapwrap" id="mapwrap">
         <div class="maploader" id="maploader"><div style="text-align:center"><div class="spin"></div>Loading flood-risk map…</div></div>
         <arcgis-map id="view" center="7.678767099036711,50.823980038266264" scale="2311162.217155">
-          <arcgis-zoom position="top-left"></arcgis-zoom>
-          <arcgis-home position="top-left"></arcgis-home>
-          <arcgis-compass position="top-left"></arcgis-compass>
-          <arcgis-search position="top-right"></arcgis-search>
-          <arcgis-expand position="top-right" expand-icon="basemap" expand-tooltip="Basemaps">
+          <arcgis-zoom slot="top-left"></arcgis-zoom>
+          <arcgis-home slot="top-left"></arcgis-home>
+          <arcgis-compass slot="top-left"></arcgis-compass>
+          <arcgis-search slot="top-right"></arcgis-search>
+          <arcgis-expand slot="top-right" icon="basemap" expand-tooltip="Basemaps">
             <arcgis-basemap-gallery></arcgis-basemap-gallery>
           </arcgis-expand>
-          <arcgis-scale-bar position="bottom-right"></arcgis-scale-bar>
+          <arcgis-scale-bar slot="bottom-right"></arcgis-scale-bar>
         </arcgis-map>
         <div class="maptools">
           <button class="chip" id="fsBtn">⛶ Fullscreen</button>
@@ -1014,6 +1013,10 @@ function showError(msg){
 function fallbackEmbedded(){
   if(mapMode==='embedded') return;
   mapMode='embedded';
+  if(!customElements.get('arcgis-embedded-map')){
+    const s=document.createElement('script'); s.type='module';
+    s.src='https://js.arcgis.com/5.0/embeddable-components/'; document.head.appendChild(s);
+  }
   // Classic embedded map as a safety net if the interactive component cannot load the item
   const wrap=$('#mapwrap');
   view.remove();
