@@ -226,6 +226,14 @@ arcgis-map,arcgis-embedded-map{display:block;width:100%;height:100%}
 .sc .d{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:8px}
 .sc-actions{margin-top:18px}
 
+/* ===== QR CARD ===== */
+.qr-card{display:inline-flex;align-items:center;gap:22px;margin-top:34px;padding:18px 24px;border-radius:20px;background:var(--card);border:1px solid var(--border);text-align:left;flex-wrap:wrap;justify-content:center}
+.qr-card .qr{background:#fff;padding:10px;border-radius:14px;box-shadow:0 6px 24px rgba(0,0,0,.25);line-height:0}
+.qr-card .qr img{width:150px;height:150px;display:block}
+.qr-card h4{font-size:1.1rem;margin-bottom:4px}
+.qr-card p{color:var(--muted);font-size:.86rem;margin:0 0 12px}
+.gal{justify-content:center}
+
 /* ===== DETAILS TABS ===== */
 .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
 .tab{padding:10px 20px;border-radius:12px;border:1px solid var(--border);background:var(--card);color:var(--muted);cursor:pointer;font-weight:600;font-family:inherit;transition:.2s}
@@ -493,12 +501,9 @@ footer{text-align:center;padding:30px 0;color:var(--muted);font-size:.85rem;bord
       <p class="section-sub">Cartographic layouts and visual analyses of the flood-risk project. Click an image to enlarge, then use ← → to browse.</p>
     </div>
     <div class="gal">
-      <figure class="shot reveal" data-file="Layout-Duesseldorf.jpg" data-t="Düsseldorf &amp; the Rhine – risk classes" data-s="Layout with legend"><img src="Layout-Duesseldorf.jpg" alt="Flood risk layout of Düsseldorf and the Rhine with the legend Hohes, Mittleres and Geringes Risiko" loading="lazy" onerror="this.parentElement.classList.add('missing')"><figcaption>Düsseldorf &amp; the Rhine – risk classes <span>Layout with legend</span></figcaption></figure>
-      <figure class="shot reveal" data-file="Layout.jpg" data-t="Flood Risk Layout – NRW" data-s="Map layout"><img src="Layout.jpg" alt="Flood Risk Layout NRW" loading="lazy" onerror="this.parentElement.classList.add('missing')"><figcaption>Flood Risk Layout – NRW <span>Map layout</span></figcaption></figure>
+            <figure class="shot reveal" data-file="Layout.jpg" data-t="Flood Risk Layout – NRW" data-s="Map layout"><img src="Layout.jpg" alt="Flood Risk Layout NRW" loading="lazy" onerror="this.parentElement.classList.add('missing')"><figcaption>Flood Risk Layout – NRW <span>Map layout</span></figcaption></figure>
       <figure class="shot reveal" data-file="La444out.jpg" data-t="Flood Risk Visualization" data-s="Visualization"><img src="La444out.jpg" alt="Flood Risk Visualization" loading="lazy" onerror="this.parentElement.classList.add('missing')"><figcaption>Flood Risk Visualization <span>Visualization</span></figcaption></figure>
-      <figure class="shot reveal" data-file="Layoffffut.jpg" data-t="Flood Risk Analysis" data-s="Analysis"><img src="Layoffffut.jpg" alt="Flood Risk Analysis" loading="lazy" onerror="this.parentElement.classList.add('missing')"><figcaption>Flood Risk Analysis <span>Analysis</span></figcaption></figure>
-      <figure class="shot reveal" data-file="Layouwewet.jpg" data-t="GIS Flood Mapping" data-s="GIS mapping"><img src="Layouwewet.jpg" alt="GIS Flood Mapping" loading="lazy" onerror="this.parentElement.classList.add('missing')"><figcaption>GIS Flood Mapping <span>GIS mapping</span></figcaption></figure>
-    </div>
+                </div>
   </div>
 </section>
 
@@ -694,6 +699,14 @@ footer{text-align:center;padding:30px 0;color:var(--muted);font-size:.85rem;bord
         <a class="btn" href="mailto:mohamed.aitabdelmalik@gmail.com">Send a message</a>
         <a class="btn" href="cv.pdf" download>📄 Download CV</a>
       </div>
+      <div class="qr-card">
+        <div class="qr"><img alt="QR code to Mohamed Ait Abdelmalik's portfolio" width="150" height="150" src="https://api.qrserver.com/v1/create-qr-code/?size=400x400&margin=0&data=https%3A%2F%2Fmohamedaitabdelmalik.netlify.app%2F"></div>
+        <div>
+          <h4>📱 Scan to open my portfolio</h4>
+          <p>mohamedaitabdelmalik.netlify.app</p>
+          <a class="btn" href="https://api.qrserver.com/v1/create-qr-code/?size=1000x1000&margin=20&data=https%3A%2F%2Fmohamedaitabdelmalik.netlify.app%2F" target="_blank" rel="noopener">⬇ Open QR code (large)</a>
+        </div>
+      </div>
       <div class="socials">
         <a class="social" href="https://github.com/mohamedaitabdelmalik" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 24 24"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 23.5 12C23.5 5.7 18.3.5 12 .5z"/></svg></a>
         <a class="social" href="https://www.linkedin.com/in/mohamed-ait-abdelmalik-a7b468195/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>
@@ -791,10 +804,10 @@ const PLACES=[
 const quick=$('#quick'), view=$('#view');
 PLACES.forEach(([n,c])=>{
   const b=document.createElement('button'); b.className='qbtn'; b.textContent=n;
-  b.onclick=()=>view.goTo(c?{center:c,scale:150000}:{center:HOME.center,scale:HOME.scale},{duration:1400});
+  b.onclick=()=>flyTo(c?{center:c,scale:150000}:HOME);
   quick.appendChild(b);
 });
-$('#resetBtn').onclick=()=>{view.goTo(HOME,{duration:1000});toast('View reset')};
+$('#resetBtn').onclick=()=>{flyTo(HOME);toast('View reset')};
 $('#fsBtn').onclick=()=>{const s=$('#explorer');document.fullscreenElement?document.exitFullscreen():s.requestFullscreen?.()};
 
 /* ---------- 3D scene ---------- */
@@ -968,7 +981,7 @@ function syncRiskLayerVisibility(){
 }
 function setRisk(id,on){
   const t=riskTargets(id);
-  if(!t.chips.length&&!t.layers.length){toast('Map classes not loaded yet – try again in a moment');return false}
+  if(!t.chips.length&&!t.layers.length){toast(mapMode==='embedded'?'Highlighting needs the interactive map – use the map legend button':'Map classes not loaded yet – try again in a moment');return false}
   on?riskSel.add(id):riskSel.delete(id);
   $(`.risk-chip[data-r="${id}"]`).classList.toggle('sel',on);
   t.chips.forEach(({st,i,c})=>{ if(st.selected.has(c.where)!==on) st.chips[i].click(); });
@@ -986,10 +999,21 @@ $('#resetAll').onclick=()=>{
   _resetLegend(); riskSel.clear(); $$('.risk-chip').forEach(b=>b.classList.remove('sel'));
 };
 
+let mapMode='loading'; // loading | interactive | embedded
+function withTimeout(p,ms,msg){
+  return Promise.race([p,new Promise((_,rej)=>setTimeout(()=>rej(new Error(msg)),ms))]);
+}
+function flyTo(t){
+  const em=$('arcgis-embedded-map');
+  if(mapMode==='embedded'&&em){em.setAttribute('center',t.center.join(','));em.setAttribute('scale',t.scale);return}
+  try{view.goTo(t,{duration:1200}).catch(()=>{})}catch(e){}
+}
 function showError(msg){
   $('#layerList').innerHTML=`<div class="status err">${msg}</div>`;
 }
 function fallbackEmbedded(){
+  if(mapMode==='embedded') return;
+  mapMode='embedded';
   // Classic embedded map as a safety net if the interactive component cannot load the item
   const wrap=$('#mapwrap');
   view.remove();
@@ -1004,14 +1028,19 @@ function fallbackEmbedded(){
 
 (async function initMap(){
   try{
-    await customElements.whenDefined('arcgis-map');
-    const [WebMap,FE,FF]=await $arcgis.import(['@arcgis/core/WebMap.js','@arcgis/core/layers/support/FeatureEffect.js','@arcgis/core/layers/support/FeatureFilter.js']);
+    await withTimeout(customElements.whenDefined('arcgis-map'),9000,'map components did not load');
+    const [WebMap,FE,FF]=await withTimeout($arcgis.import(['@arcgis/core/WebMap.js','@arcgis/core/layers/support/FeatureEffect.js','@arcgis/core/layers/support/FeatureFilter.js']),10000,'ArcGIS modules did not load');
     FeatureEffect=FE; FeatureFilter=FF;
     const webmap=new WebMap({portalItem:{id:ITEM_ID,portal:{url:PORTAL}}});
     view.map=webmap;
-    await view.viewOnReady();
+    const ready=typeof view.viewOnReady==='function'
+      ? view.viewOnReady()
+      : new Promise(res=>view.addEventListener('arcgisViewReadyChange',res,{once:true}));
+    await withTimeout(ready,15000,'map view did not become ready');
+    if(mapMode==='embedded') return; // watchdog already switched
+    mapMode='interactive';
     $('#maploader').classList.add('done');
-    await webmap.loadAll().catch(e=>console.warn('Some layers failed to load',e));
+    await withTimeout(webmap.loadAll(),15000,'layers took too long').catch(e=>console.warn('Some layers failed to load',e));
 
     const layers=[...webmap.layers].filter(l=>l.listMode!=='hide').reverse();
     if(!layers.length){showError('No operational layers found in this web map.');return}
@@ -1027,7 +1056,7 @@ function fallbackEmbedded(){
   }
 })();
 // safety net: loader never hangs forever
-setTimeout(()=>$('#maploader').classList.add('done'),20000);
+setTimeout(()=>{ if(mapMode==='loading') fallbackEmbedded(); },28000);
 </script>
 </body>
 </html>
