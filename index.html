@@ -16,6 +16,17 @@
 <!-- ArcGIS theme + Map Components (interactive map) + Embeddable Components (fallback) -->
 <link id="arcgisTheme" rel="stylesheet" href="https://js.arcgis.com/5.0/esri/themes/dark/main.css">
 <script type="module" src="https://js.arcgis.com/5.0/"></script>
+<script>
+/* Gallery images: retry once (helps right after a GitHub Pages deploy or a cached 404), then show a placeholder */
+function imgFail(img){
+  if(!img.dataset.retry){
+    img.dataset.retry='1';
+    setTimeout(()=>{img.src=img.getAttribute('src').split('?')[0]+'?v='+Date.now()},2500);
+    return;
+  }
+  img.parentElement.classList.add('missing');
+}
+</script>
 
 <style>
 :root{
@@ -500,8 +511,8 @@ footer{text-align:center;padding:30px 0;color:var(--muted);font-size:.85rem;bord
       <p class="section-sub">Cartographic layouts and visual analyses of the flood-risk project. Click an image to enlarge, then use ← → to browse.</p>
     </div>
     <div class="gal">
-            <figure class="shot reveal" data-file="Layout.jpg" data-t="Flood Risk Layout – NRW" data-s="Map layout"><img src="Layout.jpg" alt="Flood Risk Layout NRW" loading="lazy" onerror="this.parentElement.classList.add('missing')"><figcaption>Flood Risk Layout – NRW <span>Map layout</span></figcaption></figure>
-      <figure class="shot reveal" data-file="layout.jpg" data-t="Flood Risk Visualization" data-s="Visualization"><img src="layout.jpg" alt="Flood Risk Visualization" loading="lazy" onerror="this.parentElement.classList.add('missing')"><figcaption>Flood Risk Visualization <span>Visualization</span></figcaption></figure>
+            <figure class="shot reveal" data-file="Layout.jpg" data-t="Flood Risk Layout – NRW" data-s="Map layout"><img src="Layout.jpg" alt="Flood Risk Layout NRW" loading="lazy" onerror="imgFail(this)"><figcaption>Flood Risk Layout – NRW <span>Map layout</span></figcaption></figure>
+      <figure class="shot reveal" data-file="layout.jpg" data-t="Düsseldorf &amp; the Rhine – risk classes" data-s="Layout with legend"><img src="layout.jpg" alt="Flood risk layout of Düsseldorf and the Rhine with the legend Hohes, Mittleres and Geringes Risiko" loading="lazy" onerror="imgFail(this)"><figcaption>Düsseldorf &amp; the Rhine – risk classes <span>Layout with legend</span></figcaption></figure>
                 </div>
   </div>
 </section>
