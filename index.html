@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Flood Risk Areas in NRW | Your Name – GIS Portfolio</title>
-<meta name="description" content="Interactive web map of flood-risk areas in North Rhine-Westphalia (NRW), built with ArcGIS.">
-<meta property="og:title" content="Flood Risk Areas in NRW – Interactive Map">
-<meta property="og:description" content="Interactive ArcGIS web map of flood-risk areas in NRW.">
+<title>Mohamed Ait Abdelmalik | Geomatics Specialist &amp; GIS Analyst</title>
+<meta name="description" content="Portfolio of Mohamed Ait Abdelmalik – Geomatics specialist, GIS analyst, webmapping developer. Geosciences &amp; Environment, Casablanca, Morocco.">
+<meta property="og:title" content="Mohamed Ait Abdelmalik – Geomatics Specialist & GIS Analyst">
+<meta property="og:description" content="GIS, remote sensing, mining 3D modelling and webmapping projects.">
 <meta property="og:type" content="website">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,13 +33,12 @@ body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t
 a{color:inherit;text-decoration:none}
 h1,h2,h3{font-family:'Space Grotesk','Inter',sans-serif;line-height:1.15}
 .container{width:min(1180px,92%);margin-inline:auto}
-section{padding:96px 0}
+section{padding:90px 0}
 .eyebrow{display:inline-block;font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:12px}
 .section-title{font-size:clamp(1.8rem,4vw,2.7rem);margin-bottom:14px}
-.section-sub{color:var(--muted);max-width:640px;margin-bottom:44px}
+.section-sub{color:var(--muted);max-width:660px;margin-bottom:44px}
 .grad{background:linear-gradient(120deg,var(--accent),var(--accent2) 60%,var(--accent3));-webkit-background-clip:text;background-clip:text;color:transparent}
 
-/* background blobs + grid */
 .bg{position:fixed;inset:0;z-index:-1;overflow:hidden}
 .bg::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse at 50% 20%,#000 20%,transparent 75%);opacity:.5}
 .blob{position:absolute;border-radius:50%;filter:blur(110px);opacity:.35;animation:float 18s ease-in-out infinite}
@@ -47,56 +46,65 @@ section{padding:96px 0}
 .b2{width:420px;height:420px;background:var(--accent);top:30%;right:-140px;animation-delay:-6s}
 .b3{width:380px;height:380px;background:var(--accent3);bottom:-120px;left:30%;animation-delay:-11s;opacity:.2}
 @keyframes float{50%{transform:translate(40px,-50px) scale(1.1)}}
-
-/* progress bar */
 #progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--accent),var(--accent2),var(--accent3));z-index:200}
 
-/* nav */
 nav{position:fixed;top:0;width:100%;z-index:100;backdrop-filter:blur(14px);background:color-mix(in srgb,var(--bg) 70%,transparent);border-bottom:1px solid var(--border)}
 .nav-in{display:flex;align-items:center;justify-content:space-between;height:66px}
-.logo{font-family:'Space Grotesk';font-weight:700;font-size:1.2rem}
+.logo{font-family:'Space Grotesk';font-weight:700;font-size:1.15rem}
 .logo span{color:var(--accent)}
-.links{display:flex;gap:26px;align-items:center}
-.links a{font-size:.92rem;color:var(--muted);transition:.2s;position:relative}
+.links{display:flex;gap:22px;align-items:center}
+.links a{font-size:.9rem;color:var(--muted);transition:.2s;position:relative}
 .links a:hover,.links a.active{color:var(--text)}
 .links a.active::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;background:var(--accent);border-radius:2px}
 .icon-btn{background:var(--card);border:1px solid var(--border);color:var(--text);width:38px;height:38px;border-radius:10px;cursor:pointer;font-size:1rem;transition:.2s}
 .icon-btn:hover{border-color:var(--accent);box-shadow:var(--glow)}
 .burger{display:none}
-@media(max-width:820px){
+@media(max-width:940px){
   .links{position:absolute;top:66px;left:0;right:0;flex-direction:column;background:var(--bg2);padding:20px;border-bottom:1px solid var(--border);display:none}
   .links.open{display:flex}
   .burger{display:block}
 }
 
-/* hero */
 .hero{min-height:100vh;display:flex;align-items:center;padding-top:110px}
 .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center}
 .badge{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border:1px solid var(--border);background:var(--card);border-radius:999px;font-size:.82rem;color:var(--muted);margin-bottom:22px}
 .dot{width:8px;height:8px;border-radius:50%;background:var(--accent3);box-shadow:0 0 0 0 var(--accent3);animation:pulse 2s infinite}
 @keyframes pulse{70%{box-shadow:0 0 0 10px transparent}}
-.hero h1{font-size:clamp(2.4rem,6vw,4.4rem);margin-bottom:20px;letter-spacing:-.02em}
-.hero p{color:var(--muted);font-size:1.12rem;max-width:560px;margin-bottom:30px}
+.hero h1{font-size:clamp(2.3rem,5.6vw,4.2rem);margin-bottom:18px;letter-spacing:-.02em}
+.hero p{color:var(--muted);font-size:1.08rem;max-width:580px;margin-bottom:28px}
 .typing{color:var(--accent);font-weight:600;border-right:2px solid var(--accent);padding-right:4px;animation:blink .8s step-end infinite}
 @keyframes blink{50%{border-color:transparent}}
 .btns{display:flex;gap:14px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:12px;font-weight:600;font-size:.95rem;cursor:pointer;border:1px solid var(--border);transition:.25s;color:var(--text);background:var(--card)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:12px;font-weight:600;font-size:.92rem;cursor:pointer;border:1px solid var(--border);transition:.25s;color:var(--text);background:var(--card);font-family:inherit}
 .btn.primary{background:linear-gradient(120deg,var(--accent),var(--accent2));border:none;color:#fff;box-shadow:var(--glow)}
 .btn:hover{transform:translateY(-3px)}
-.hero-card{background:var(--card);border:1px solid var(--border);border-radius:22px;padding:26px;backdrop-filter:blur(10px);box-shadow:var(--glow);transform-style:preserve-3d;transition:transform .15s}
-.hero-card h3{font-size:1rem;color:var(--muted);font-weight:500;margin-bottom:18px}
-.legend-row{display:flex;align-items:center;gap:12px;margin-bottom:14px;font-size:.95rem}
-.sw{width:16px;height:16px;border-radius:5px}
-.bar{flex:1;height:8px;background:var(--border);border-radius:8px;overflow:hidden}
-.bar i{display:block;height:100%;border-radius:8px;width:0;transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
-@media(max-width:900px){.hero-grid{grid-template-columns:1fr}}
+.meta{display:flex;gap:18px;flex-wrap:wrap;margin-top:26px;color:var(--muted);font-size:.88rem}
 
-/* stats */
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:70px}
-.stat{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:24px;text-align:center}
+.profile-card{background:var(--card);border:1px solid var(--border);border-radius:24px;padding:28px;backdrop-filter:blur(10px);box-shadow:var(--glow);text-align:center;transform-style:preserve-3d;transition:transform .15s}
+.avatar{width:150px;height:150px;margin:0 auto 18px;border-radius:50%;background:linear-gradient(135deg,var(--accent2),var(--accent));display:grid;place-items:center;font-family:'Space Grotesk';font-size:3.2rem;font-weight:700;color:#fff;position:relative;overflow:hidden;border:4px solid var(--border)}
+.avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.profile-card h3{font-size:1.25rem}
+.profile-card .role{color:var(--muted);font-size:.9rem;margin:4px 0 18px}
+.qr{display:inline-block;background:#fff;padding:8px;border-radius:12px}
+.qr img{width:104px;height:104px;display:block}
+.qr-cap{font-size:.75rem;color:var(--muted);margin-top:8px}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr}.profile-card{max-width:360px}}
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:64px}
+.stat{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:22px;text-align:center}
 .stat b{display:block;font-family:'Space Grotesk';font-size:2.2rem}
-.stat span{color:var(--muted);font-size:.88rem}
+.stat span{color:var(--muted);font-size:.86rem}
 @media(max-width:700px){.stats{grid-template-columns:repeat(2,1fr)}}
+
+/* skills */
+.skill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px}
+.skill-card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:24px;transition:.3s}
+.skill-card:hover{border-color:var(--accent);transform:translateY(-4px);box-shadow:var(--glow)}
+.skill-card h3{font-size:1.05rem;margin-bottom:14px}
+.skill-card h3 em{font-style:normal;margin-right:8px}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pills span{padding:6px 13px;border-radius:999px;border:1px solid var(--border);background:var(--card);font-size:.82rem;transition:.2s}
+.pills span:hover{color:var(--accent);border-color:var(--accent)}
 
 /* map */
 .map-shell{border:1px solid var(--border);border-radius:24px;overflow:hidden;background:var(--bg2);box-shadow:var(--glow)}
@@ -104,47 +112,71 @@ nav{position:fixed;top:0;width:100%;z-index:100;backdrop-filter:blur(14px);backg
 .win{display:flex;gap:7px}.win i{width:11px;height:11px;border-radius:50%}
 .win i:nth-child(1){background:#ff5f57}.win i:nth-child(2){background:#febc2e}.win i:nth-child(3){background:#28c840}
 .map-title{font-size:.85rem;color:var(--muted)}
-.map-actions{display:flex;gap:8px}
-.chip{font-size:.8rem;padding:6px 12px;border-radius:8px;background:var(--card);border:1px solid var(--border);color:var(--text);cursor:pointer;transition:.2s}
+.map-actions{display:flex;gap:8px;flex-wrap:wrap}
+.chip{font-size:.8rem;padding:6px 12px;border-radius:8px;background:var(--card);border:1px solid var(--border);color:var(--text);cursor:pointer;transition:.2s;font-family:inherit}
 .chip:hover{border-color:var(--accent)}
 .map-body{height:min(74vh,720px);min-height:420px;position:relative}
 arcgis-embedded-map{display:block;width:100%;height:100%}
 .map-shell:fullscreen{border-radius:0}
 .map-shell:fullscreen .map-body{height:calc(100vh - 56px)}
-.tips{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
-.tip{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px 18px;font-size:.9rem;color:var(--muted)}
-.tip b{color:var(--text);display:block;margin-bottom:4px}
-@media(max-width:800px){.tips{grid-template-columns:1fr}}
+.source{margin-top:14px;font-size:.82rem;color:var(--muted)}
 
-/* about */
-.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:50px;align-items:center}
-.avatar{aspect-ratio:1;border-radius:28px;background:linear-gradient(135deg,var(--accent2),var(--accent));display:grid;place-items:center;font-family:'Space Grotesk';font-size:5rem;font-weight:700;color:#fff;box-shadow:var(--glow);position:relative;overflow:hidden}
-.avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.about p{color:var(--muted);margin-bottom:16px}
-.skills{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
-.skill{padding:8px 16px;border-radius:999px;border:1px solid var(--border);background:var(--card);font-size:.86rem;transition:.2s}
-.skill:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
-@media(max-width:820px){.about-grid{grid-template-columns:1fr}.avatar{max-width:260px}}
+/* timeline */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+@media(max-width:900px){.two{grid-template-columns:1fr}}
+.col-title{font-size:1.3rem;margin-bottom:22px}
+.timeline{position:relative;padding-left:26px;border-left:2px solid var(--border)}
+.tl-item{position:relative;margin-bottom:26px;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px 20px;transition:.3s}
+.tl-item:hover{border-color:var(--accent);transform:translateX(4px)}
+.tl-item::before{content:"";position:absolute;left:-35px;top:22px;width:14px;height:14px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--bg)}
+.tl-date{font-size:.76rem;color:var(--accent);font-weight:600;letter-spacing:.05em;text-transform:uppercase}
+.tl-item h4{font-size:1.02rem;margin:4px 0 2px}
+.tl-item .org{color:var(--muted);font-size:.86rem;margin-bottom:8px}
+.tl-item p{color:var(--muted);font-size:.88rem}
 
 /* projects */
 .filters{display:flex;gap:10px;margin-bottom:30px;flex-wrap:wrap}
 .filters button{padding:8px 18px;border-radius:999px;border:1px solid var(--border);background:var(--card);color:var(--muted);cursor:pointer;font-weight:500;transition:.2s;font-family:inherit}
 .filters button.on,.filters button:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:22px}
 .project{background:var(--card);border:1px solid var(--border);border-radius:20px;overflow:hidden;transition:.3s;display:flex;flex-direction:column}
 .project:hover{transform:translateY(-6px);border-color:var(--accent);box-shadow:var(--glow)}
 .project.hide{display:none}
-.thumb{height:160px;display:grid;place-items:center;font-size:3rem;position:relative}
+.thumb{height:140px;display:grid;place-items:center;font-size:3rem;position:relative}
+.live{position:absolute;top:12px;right:12px;font-size:.7rem;font-weight:700;padding:3px 10px;border-radius:999px;background:rgba(0,0,0,.35);color:#fff;display:flex;align-items:center;gap:6px}
+.live i{width:7px;height:7px;border-radius:50%;background:#34d399;animation:pulse 2s infinite}
 .t1{background:linear-gradient(135deg,#0ea5e9,#6366f1)}
 .t2{background:linear-gradient(135deg,#10b981,#0ea5e9)}
 .t3{background:linear-gradient(135deg,#f59e0b,#ef4444)}
 .t4{background:linear-gradient(135deg,#8b5cf6,#ec4899)}
+.t5{background:linear-gradient(135deg,#14b8a6,#3b82f6)}
+.t6{background:linear-gradient(135deg,#f43f5e,#f59e0b)}
 .p-body{padding:20px;display:flex;flex-direction:column;gap:10px;flex:1}
-.p-body h3{font-size:1.15rem}
-.p-body p{color:var(--muted);font-size:.9rem;flex:1}
+.p-year{font-size:.74rem;color:var(--accent);font-weight:600}
+.p-body h3{font-size:1.1rem}
+.p-body p{color:var(--muted);font-size:.88rem;flex:1}
 .tags{display:flex;gap:6px;flex-wrap:wrap}
 .tags span{font-size:.72rem;padding:3px 10px;border-radius:6px;background:var(--border);color:var(--muted)}
 .p-link{color:var(--accent);font-weight:600;font-size:.9rem}
+
+/* certs */
+.cert-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+.cert{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px;display:flex;gap:14px;align-items:flex-start;transition:.3s}
+.cert:hover{border-color:var(--accent3);transform:translateY(-3px)}
+.cert em{font-style:normal;font-size:1.5rem}
+.cert b{font-size:.93rem;display:block}
+.cert span{font-size:.78rem;color:var(--muted)}
+.verify{margin-top:20px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:.84rem;color:var(--muted)}
+.verify a{padding:5px 12px;border:1px solid var(--border);border-radius:8px;background:var(--card);transition:.2s}
+.verify a:hover{border-color:var(--accent);color:var(--accent)}
+
+/* languages */
+.lang-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:10px}
+.lang{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px}
+.lang div{display:flex;justify-content:space-between;margin-bottom:10px;font-weight:600}
+.lang div span{color:var(--muted);font-weight:500;font-size:.85rem}
+.meter{height:8px;border-radius:8px;background:var(--border);overflow:hidden}
+.meter i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:8px;transition:width 1.4s cubic-bezier(.2,.8,.2,1)}
 
 /* contact */
 .contact-box{background:linear-gradient(135deg,color-mix(in srgb,var(--accent2) 22%,var(--bg2)),color-mix(in srgb,var(--accent) 16%,var(--bg2)));border:1px solid var(--border);border-radius:28px;padding:60px 30px;text-align:center}
@@ -154,18 +186,15 @@ arcgis-embedded-map{display:block;width:100%;height:100%}
 .social{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;background:var(--card);border:1px solid var(--border);transition:.25s}
 .social:hover{transform:translateY(-5px) rotate(-4deg);border-color:var(--accent);box-shadow:var(--glow)}
 .social svg{width:22px;height:22px;fill:currentColor}
-
 footer{text-align:center;padding:34px 0;color:var(--muted);font-size:.85rem;border-top:1px solid var(--border)}
 
-/* reveal */
 .reveal{opacity:0;transform:translateY(30px);transition:opacity .8s,transform .8s}
 .reveal.in{opacity:1;transform:none}
-
-/* toast */
 #toast{position:fixed;bottom:28px;left:50%;transform:translate(-50%,100px);background:var(--accent);color:#fff;padding:12px 22px;border-radius:12px;font-weight:600;transition:.4s;z-index:300}
 #toast.show{transform:translate(-50%,0)}
 #top{position:fixed;right:22px;bottom:22px;opacity:0;pointer-events:none;transition:.3s;z-index:150}
 #top.show{opacity:1;pointer-events:auto}
+@media print{nav,#top,.bg,#progress{display:none}.reveal{opacity:1;transform:none}}
 </style>
 </head>
 <body>
@@ -174,12 +203,14 @@ footer{text-align:center;padding:34px 0;color:var(--muted);font-size:.85rem;bord
 
 <nav>
   <div class="container nav-in">
-    <a href="#home" class="logo">Your<span>Name</span>.</a>
+    <a href="#home" class="logo">Mohamed<span>.</span>AA</a>
     <div class="links" id="links">
       <a href="#home" class="active">Home</a>
-      <a href="#map">Map</a>
-      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#map">Featured Map</a>
+      <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
+      <a href="#certs">Certifications</a>
       <a href="#contact">Contact</a>
       <button class="icon-btn" id="theme" title="Toggle theme" aria-label="Toggle theme">🌙</button>
     </div>
@@ -192,41 +223,73 @@ footer{text-align:center;padding:34px 0;color:var(--muted);font-size:.85rem;bord
   <div class="container">
     <div class="hero-grid">
       <div>
-        <div class="badge"><span class="dot"></span> Open for GIS &amp; Data Projects</div>
-        <h1>Mapping <span class="grad">Flood Risk</span><br>across NRW.</h1>
-        <p>Hi, I'm <b>Your Name</b> — <span class="typing" id="typing"></span><br>
-        Explore an interactive web map showing flood-affected areas by risk level in North Rhine-Westphalia, Germany.</p>
+        <div class="badge"><span class="dot"></span> Master's student · Applied Geomatics · Open to opportunities</div>
+        <h1>Hi, I'm <span class="grad">Mohamed Ait Abdelmalik</span></h1>
+        <p><span class="typing" id="typing"></span><br>
+        Geoscientist specialized in applied geomatics. I combine geology with advanced geospatial tools (GIS, remote sensing, spatial analysis) to turn complex data into thematic maps and environmental decision-support solutions.</p>
         <div class="btns">
-          <a href="#map" class="btn primary">🗺️ Explore the Map</a>
-          <a href="#projects" class="btn">More Projects →</a>
+          <a href="#projects" class="btn primary">🚀 View Projects</a>
+          <a href="#map" class="btn">🗺️ Featured Map</a>
+          <a href="cv.pdf" class="btn" download>📄 Download CV</a>
+        </div>
+        <div class="meta">
+          <span>📍 Casablanca, Morocco</span>
+          <span>🎓 Université Hassan II</span>
+          <span>🌐 AR · AMZ · FR · EN · DE</span>
         </div>
       </div>
-      <div class="hero-card" id="tilt">
-        <h3>Risk levels (illustrative)</h3>
-        <div class="legend-row"><span class="sw" style="background:#ef4444"></span>High<div class="bar"><i data-w="82" style="background:#ef4444"></i></div></div>
-        <div class="legend-row"><span class="sw" style="background:#f59e0b"></span>Medium<div class="bar"><i data-w="58" style="background:#f59e0b"></i></div></div>
-        <div class="legend-row"><span class="sw" style="background:#38bdf8"></span>Low<div class="bar"><i data-w="34" style="background:#38bdf8"></i></div></div>
-        <div class="legend-row"><span class="sw" style="background:#34d399"></span>Extreme events<div class="bar"><i data-w="20" style="background:#34d399"></i></div></div>
-        <p style="font-size:.78rem;color:var(--muted);margin:10px 0 0">Bars are decorative. See the live legend inside the map.</p>
+
+      <div class="profile-card" id="tilt">
+        <div class="avatar">
+          <span>MA</span>
+          <img src="profile.jpg" alt="Mohamed Ait Abdelmalik" onerror="this.remove()">
+        </div>
+        <h3>Mohamed Ait Abdelmalik</h3>
+        <div class="role">Geomatics Specialist · GIS Analyst<br>Geosciences &amp; Environment</div>
+        <div class="qr"><img alt="QR code to portfolio" src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&margin=0&data=https%3A%2F%2Fmohamedaitabdelmalik.netlify.app%2F"></div>
+        <div class="qr-cap">Scan to open my portfolio</div>
       </div>
     </div>
 
     <div class="stats reveal">
-      <div class="stat"><b class="count" data-n="18">0</b><span>Months of GIS experience (edit)</span></div>
-      <div class="stat"><b class="count" data-n="12">0</b><span>Projects (edit)</span></div>
-      <div class="stat"><b class="count" data-n="5">0</b><span>Tools mastered (edit)</span></div>
-      <div class="stat"><b class="count" data-n="1">0</b><span>Interactive map ✔</span></div>
+      <div class="stat"><b class="count" data-n="3">0</b><span>Live web apps</span></div>
+      <div class="stat"><b class="count" data-n="6">0</b><span>Featured projects</span></div>
+      <div class="stat"><b class="count" data-n="7">0</b><span>Certifications</span></div>
+      <div class="stat"><b class="count" data-n="5">0</b><span>Languages</span></div>
     </div>
   </div>
 </header>
 
-<!-- MAP -->
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <div class="reveal">
+      <span class="eyebrow">Expertise</span>
+      <h2 class="section-title">Skills &amp; <span class="grad">Technologies</span></h2>
+      <p class="section-sub">From spatial analysis and remote sensing to 3D mining models and real-time web mapping.</p>
+    </div>
+    <div class="skill-grid">
+      <div class="skill-card reveal"><h3><em>🗺️</em>GIS &amp; Cartography</h3>
+        <div class="pills"><span>ArcGIS Pro</span><span>ArcGIS Online</span><span>QGIS</span><span>SAGA GIS</span><span>Spatial analysis</span><span>Geostatistics</span><span>Geodatabase</span></div></div>
+      <div class="skill-card reveal"><h3><em>🛰️</em>Remote Sensing</h3>
+        <div class="pills"><span>ENVI</span><span>ERDAS Imagine</span><span>SNAP</span><span>Google Earth Engine</span></div></div>
+      <div class="skill-card reveal"><h3><em>⛏️</em>Mining Modelling</h3>
+        <div class="pills"><span>Datamine</span><span>3D modelling</span><span>Variography</span><span>Kriging</span><span>Resource estimation</span></div></div>
+      <div class="skill-card reveal"><h3><em>🐍</em>Programming</h3>
+        <div class="pills"><span>Python</span><span>GeoPandas</span><span>Rasterio</span><span>NumPy</span><span>Pandas</span><span>ArcPy</span><span>PyQGIS</span><span>SQL / PostGIS</span></div></div>
+      <div class="skill-card reveal"><h3><em>🌐</em>Webmapping &amp; Web</h3>
+        <div class="pills"><span>Leaflet</span><span>MapBox</span><span>OpenLayers</span><span>MapLibre GL</span><span>Flask</span><span>OSRM</span><span>WordPress</span><span>GitHub</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED MAP -->
 <section id="map">
   <div class="container">
     <div class="reveal">
-      <span class="eyebrow">Featured project</span>
+      <span class="eyebrow">Featured map</span>
       <h2 class="section-title">Überflutungsflächen nach Risiko in <span class="grad">NRW</span></h2>
-      <p class="section-sub">Interactive ArcGIS web map. Switch the basemap, open the legend, use bookmarks and share it — all inside the map.</p>
+      <p class="section-sub">Flood-risk areas in North Rhine-Westphalia (Germany) by risk level. Use the legend, bookmarks and basemap gallery inside the map.</p>
     </div>
 
     <div class="map-shell reveal" id="mapShell">
@@ -236,7 +299,8 @@ footer{text-align:center;padding:34px 0;color:var(--muted);font-size:.85rem;bord
         <div class="map-actions">
           <button class="chip" id="fsBtn">⛶ Fullscreen</button>
           <button class="chip" id="resetBtn">↺ Reset view</button>
-          <a class="chip" target="_blank" rel="noopener" href="https://ucd-cpe.maps.arcgis.com/home/item.html?id=f0ce21dbb53f4453a01cd4cf3e11ee0e">↗ Open in ArcGIS</a>
+          <a class="chip" target="_blank" rel="noopener" href="https://mohamed-ait-abdelmalik.site/3d-webmap-nrw">🧊 3D Web Map</a>
+          <a class="chip" target="_blank" rel="noopener" href="https://ucd-cpe.maps.arcgis.com/home/item.html?id=f0ce21dbb53f4453a01cd4cf3e11ee0e">↗ ArcGIS</a>
         </div>
       </div>
       <div class="map-body">
@@ -256,31 +320,56 @@ footer{text-align:center;padding:34px 0;color:var(--muted);font-size:.85rem;bord
         </arcgis-embedded-map>
       </div>
     </div>
-
-    <div class="tips reveal">
-      <div class="tip"><b>📖 Legend</b>Open the legend panel to see risk classes and colors.</div>
-      <div class="tip"><b>🧭 Bookmarks</b>Jump quickly to saved regions of interest.</div>
-      <div class="tip"><b>🗂️ Basemaps</b>Change the background to satellite, streets or dark.</div>
-    </div>
+    <p class="source reveal">Data source: BfG, with the support of Esri Germany.</p>
   </div>
 </section>
 
-<!-- ABOUT -->
-<section id="about">
-  <div class="container about-grid">
-    <div class="avatar reveal">
-      <span>YN</span>
-      <!-- <img src="photo.jpg" alt="Your Name"> -->
+<!-- EXPERIENCE + EDUCATION -->
+<section id="experience">
+  <div class="container">
+    <div class="reveal">
+      <span class="eyebrow">Journey</span>
+      <h2 class="section-title">Experience &amp; <span class="grad">Education</span></h2>
     </div>
-    <div class="about reveal">
-      <span class="eyebrow">About me</span>
-      <h2 class="section-title">GIS &amp; Spatial Data <span class="grad">Enthusiast</span></h2>
-      <p>Write a short bio here: who you are, where you study or work, and what motivates you. This project visualizes flood risk in NRW using ArcGIS Online to help understand and communicate spatial risk.</p>
-      <p>Mention your university / program, interests (hydrology, urban planning, remote sensing…), and what you are looking for (internship, job, collaboration).</p>
-      <div class="skills">
-        <span class="skill">ArcGIS Online</span><span class="skill">ArcGIS Pro</span><span class="skill">QGIS</span>
-        <span class="skill">Python</span><span class="skill">JavaScript</span><span class="skill">Remote Sensing</span>
-        <span class="skill">Spatial Analysis</span><span class="skill">Web Mapping</span>
+    <div class="two">
+      <div>
+        <h3 class="col-title reveal">💼 Professional Experience</h3>
+        <div class="timeline">
+          <div class="tl-item reveal">
+            <div class="tl-date">July 2026 · 1 month</div>
+            <h4>Geomatics Intern</h4>
+            <div class="org">Groupe MANAGEM (SMI) · Imiter District, Tinghir, Morocco</div>
+            <p>3D modelling of the mineralized structure of the Igoudrane deposit: integration of drill-hole data, geological maps and topographic surveys, modelling in <b>Datamine</b>, spatial analysis and thematic mapping with <b>ArcGIS Pro</b> and <b>QGIS</b>.</p>
+          </div>
+          <div class="tl-item reveal">
+            <div class="tl-date">Jan 2023 – Jan 2025</div>
+            <h4>IT Manager</h4>
+            <div class="org">Enactus Club · Faculty of Sciences Semlalia</div>
+            <p>Managed the club website and social networks, ran digital marketing campaigns and web data analysis.</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h3 class="col-title reveal">🎓 Education</h3>
+        <div class="timeline">
+          <div class="tl-item reveal">
+            <div class="tl-date">Oct 2025 – Present</div>
+            <h4>Master – Applied Geomatics (Geosciences &amp; Environment)</h4>
+            <div class="org">Université Hassan II, Casablanca</div>
+            <p>GIS, remote sensing, spatial analysis, geostatistics, digital cartography, spatial databases, Python/GIS, webmapping, AI applied to geosciences, natural hazards.</p>
+          </div>
+          <div class="tl-item reveal">
+            <div class="tl-date">Sep 2021 – Jun 2025</div>
+            <h4>Bachelor – Earth &amp; Universe Sciences, Applied Geology</h4>
+            <div class="org">Faculty of Sciences Semlalia, Cadi Ayyad University, Marrakech</div>
+            <p>Field geology and spatial analysis.</p>
+          </div>
+          <div class="tl-item reveal">
+            <div class="tl-date">Sep 2016 – Jun 2019</div>
+            <h4>Baccalauréat – Life &amp; Earth Sciences (SVT)</h4>
+            <div class="org">Lycée Boumalne Dades, Tinghir</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -291,37 +380,115 @@ footer{text-align:center;padding:34px 0;color:var(--muted);font-size:.85rem;bord
   <div class="container">
     <div class="reveal">
       <span class="eyebrow">Portfolio</span>
-      <h2 class="section-title">More <span class="grad">Projects</span></h2>
-      <p class="section-sub">Replace these cards with your real projects and GitHub links.</p>
+      <h2 class="section-title">Projects &amp; <span class="grad">Achievements</span></h2>
+      <p class="section-sub">Real-time transit tracking, route calculators, heat maps, hazard mapping and 3D web maps.</p>
     </div>
     <div class="filters reveal">
       <button class="on" data-f="all">All</button>
-      <button data-f="gis">GIS</button>
-      <button data-f="web">Web</button>
-      <button data-f="data">Data</button>
+      <button data-f="web">Webmapping</button>
+      <button data-f="gis">GIS &amp; Hazards</button>
     </div>
     <div class="grid">
-      <article class="project reveal" data-c="gis">
-        <div class="thumb t1">🌊</div>
-        <div class="p-body"><h3>Flood Risk NRW</h3><p>Interactive map of flood areas by risk level in North Rhine-Westphalia.</p>
-          <div class="tags"><span>ArcGIS</span><span>Web Map</span></div><a class="p-link" href="#map">View map →</a></div>
-      </article>
-      <article class="project reveal" data-c="gis">
-        <div class="thumb t2">🛰️</div>
-        <div class="p-body"><h3>Project Two</h3><p>Short description of your second project — goal, data and result.</p>
-          <div class="tags"><span>QGIS</span><span>Remote Sensing</span></div><a class="p-link" href="https://github.com/your-username/project-two" target="_blank" rel="noopener">View on GitHub →</a></div>
-      </article>
+
       <article class="project reveal" data-c="web">
-        <div class="thumb t3">💻</div>
-        <div class="p-body"><h3>Project Three</h3><p>A web app or dashboard you built. Add what problem it solves.</p>
-          <div class="tags"><span>JavaScript</span><span>HTML/CSS</span></div><a class="p-link" href="https://github.com/your-username/project-three" target="_blank" rel="noopener">View on GitHub →</a></div>
+        <div class="thumb t1">🚆<span class="live"><i></i>LIVE</span></div>
+        <div class="p-body"><span class="p-year">2026</span>
+          <h3>Dutch Public Transport – Real-Time WebGIS</h3>
+          <p>Interactive real-time map tracking ~2,000 public transport vehicles (bus, tram, metro, ferry) across the Netherlands, refreshed every 9 seconds. GTFS-Realtime decoded from Protocol Buffers, smooth marker animation, multiple basemaps, installable PWA.</p>
+          <div class="tags"><span>Python</span><span>Leaflet</span><span>Node.js</span><span>Protobuf</span><span>PWA</span><span>Netlify</span></div>
+          <a class="p-link" href="https://nl-transit-live.netlify.app/" target="_blank" rel="noopener">Open live app →</a></div>
       </article>
-      <article class="project reveal" data-c="data">
-        <div class="thumb t4">📊</div>
-        <div class="p-body"><h3>Project Four</h3><p>A data analysis or visualization project with Python.</p>
-          <div class="tags"><span>Python</span><span>Pandas</span></div><a class="p-link" href="https://github.com/your-username/project-four" target="_blank" rel="noopener">View on GitHub →</a></div>
+
+      <article class="project reveal" data-c="web">
+        <div class="thumb t2">🚋<span class="live"><i></i>LIVE</span></div>
+        <div class="p-body"><span class="p-year">2026</span>
+          <h3>Casablanca Tramway – Route Calculator</h3>
+          <p>Optimal itinerary on the Casablanca tram network (T1, T2, T3, T4, BW1, BW2) with official transfers, A → B click selection, 2D (Leaflet) and 3D (MapLibre GL) views, walking route via OSRM, detailed PDF and WhatsApp sharing.</p>
+          <div class="tags"><span>Flask</span><span>Leaflet</span><span>MapLibre GL</span><span>OSRM</span><span>jsPDF</span><span>GeoJSON</span></div>
+          <a class="p-link" href="https://medaitabdelmalik1.pythonanywhere.com/" target="_blank" rel="noopener">Open live app →</a></div>
+      </article>
+
+      <article class="project reveal" data-c="web">
+        <div class="thumb t3">🔥<span class="live"><i></i>LIVE</span></div>
+        <div class="p-body"><span class="p-year">2026</span>
+          <h3>Casablanca Tramway &amp; Busway – Heat Map</h3>
+          <p>Interactive density map of the tram + busway network: heat map per station, adjustable radius, 3 basemaps, smart station clustering, and the 13 official transfer points highlighted. Data from OpenStreetMap (Overpass QL) normalized to GeoJSON (RFC 7946, WGS 84).</p>
+          <div class="tags"><span>Overpass QL</span><span>OSM</span><span>GeoJSON</span><span>Leaflet</span><span>Responsive</span></div>
+          <a class="p-link" href="https://casa-busway-tramway-heatmap.netlify.app/" target="_blank" rel="noopener">Open live app →</a></div>
+      </article>
+
+      <article class="project reveal" data-c="gis web">
+        <div class="thumb t4">🌊</div>
+        <div class="p-body"><span class="p-year">NRW · Germany</span>
+          <h3>Flood Risk Zones in North Rhine-Westphalia</h3>
+          <p>Flood-risk areas by risk level, as an ArcGIS web map and a 3D web map. Source: BfG, with the support of Esri Germany.</p>
+          <div class="tags"><span>ArcGIS Online</span><span>3D Web Map</span><span>Risk mapping</span></div>
+          <a class="p-link" href="https://mohamed-ait-abdelmalik.site/3d-webmap-nrw" target="_blank" rel="noopener">Open 3D web map →</a></div>
+      </article>
+
+      <article class="project reveal" data-c="gis">
+        <div class="thumb t5">🌋</div>
+        <div class="p-body"><span class="p-year">Hazards</span>
+          <h3>Seismic Susceptibility Mapping – SAPIN Zone</h3>
+          <p>Seismic susceptibility mapping of the SAPIN zone using ArcGIS Pro and Python.</p>
+          <div class="tags"><span>ArcGIS Pro</span><span>Python</span><span>Spatial analysis</span></div>
+          <a class="p-link" href="https://github.com/mohamedaitabdelmalik" target="_blank" rel="noopener">See on GitHub →</a></div>
+      </article>
+
+      <article class="project reveal" data-c="gis">
+        <div class="thumb t6">🧭</div>
+        <div class="p-body"><span class="p-year">ArcGIS Online</span>
+          <h3>Interactive Maps &amp; GIS Analyses</h3>
+          <p>A collection of interactive maps and GIS analyses published on my ArcGIS Online profile.</p>
+          <div class="tags"><span>ArcGIS Online</span><span>Web maps</span><span>Dashboards</span></div>
+          <a class="p-link" href="https://ucd-cpe.maps.arcgis.com/home/user.html?user=MohamedAitAbdelmalik" target="_blank" rel="noopener">Open ArcGIS profile →</a></div>
       </article>
     </div>
+    <div class="btns reveal" style="margin-top:34px">
+      <a class="btn" href="https://mohamedaitabdelmalik.netlify.app/" target="_blank" rel="noopener">🌍 Full portfolio</a>
+      <a class="btn" href="https://github.com/mohamedaitabdelmalik" target="_blank" rel="noopener">🐙 More on GitHub</a>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certs">
+  <div class="container">
+    <div class="reveal">
+      <span class="eyebrow">Learning</span>
+      <h2 class="section-title">Certifications &amp; <span class="grad">Languages</span></h2>
+    </div>
+    <div class="cert-grid">
+      <div class="cert reveal"><em>📊</em><div><b>Google Data Analytics Foundations</b><span>Coursera / Google</span></div></div>
+      <div class="cert reveal"><em>🗺️</em><div><b>Geospatial Data Analytics Essential Training</b><span>GIS &amp; Python</span></div></div>
+      <div class="cert reveal"><em>📣</em><div><b>Fundamentals of Digital Marketing</b><span>Google</span></div></div>
+      <div class="cert reveal"><em>☁️</em><div><b>AWS Educate – Serverless</b><span>Amazon Web Services</span></div></div>
+      <div class="cert reveal"><em>🗄️</em><div><b>Spatial Databases</b><span>PostGIS / PostgreSQL / QGIS</span></div></div>
+      <div class="cert reveal"><em>⛏️</em><div><b>Datamine Studio RM</b><span>Mining modelling</span></div></div>
+      <div class="cert reveal"><em>🤖</em><div><b>Intro to Machine Learning for Earth Observation</b><span>EO College</span></div></div>
+    </div>
+    <div class="verify reveal">
+      <b>Verify:</b>
+      <a href="https://www.coursera.org/account/accomplishments/verify/JYEGCQRMMFDY" target="_blank" rel="noopener">Coursera 1</a>
+      <a href="https://www.coursera.org/account/accomplishments/verify/LZVMQBUBZA3V" target="_blank" rel="noopener">Coursera 2</a>
+      <a href="https://www.coursera.org/account/accomplishments/verify/AN3TEEXU3DFW" target="_blank" rel="noopener">Coursera 3</a>
+      <a href="https://grow.google/intl/uk/certificate-validation/" target="_blank" rel="noopener">Google</a>
+      <a href="https://www.credly.com/badges/d02ef8d6-8eeb-4f26-9026-3c68d15a6eda" target="_blank" rel="noopener">Credly</a>
+      <a href="https://courses.yl-ptech.skillsnetwork.site/certificates/c71a92fc28e44d28ab22c7fd1962dc52" target="_blank" rel="noopener">IBM SkillsNetwork</a>
+      <a href="https://www.udemy.com/certificate/UC-c3be31bb-a648-4c84-a44d-563ddb6e5b86/" target="_blank" rel="noopener">Udemy 1</a>
+      <a href="https://www.udemy.com/certificate/UC-9e370065-da08-4455-9715-82ed2332a8be/" target="_blank" rel="noopener">Udemy 2 – PostGIS/QGIS</a>
+      <a href="https://eo-college.org/verify/7C87DF7E6D-7CBD56C68C-759D8EF2F0/" target="_blank" rel="noopener">EO College</a>
+    </div>
+
+    <h3 class="col-title reveal" style="margin-top:50px">🌍 Languages</h3>
+    <div class="lang-grid">
+      <div class="lang reveal"><div>Arabic <span>Native</span></div><div class="meter"><i data-w="100"></i></div></div>
+      <div class="lang reveal"><div>Amazigh <span>Native</span></div><div class="meter"><i data-w="100"></i></div></div>
+      <div class="lang reveal"><div>French <span>B1</span></div><div class="meter"><i data-w="55"></i></div></div>
+      <div class="lang reveal"><div>English <span>B1</span></div><div class="meter"><i data-w="55"></i></div></div>
+      <div class="lang reveal"><div>German <span>A2</span></div><div class="meter"><i data-w="30"></i></div></div>
+    </div>
+    <p class="section-sub reveal" style="margin-top:30px;margin-bottom:0"><b>Interests:</b> integrating artificial intelligence and geospatial technologies into Earth sciences, environmental monitoring and sustainable development.</p>
   </div>
 </section>
 
@@ -329,23 +496,25 @@ footer{text-align:center;padding:34px 0;color:var(--muted);font-size:.85rem;bord
 <section id="contact">
   <div class="container">
     <div class="contact-box reveal">
-      <h2>Let's <span class="grad">connect</span></h2>
-      <p>Interested in collaborating or have a question about the map?</p>
+      <h2>Let's <span class="grad">work together</span></h2>
+      <p>Open to internships, GIS projects and collaborations. 📍 Casablanca, Morocco</p>
       <div class="btns" style="justify-content:center">
-        <button class="btn primary" id="copyMail" data-mail="your.email@example.com">✉️ Copy my email</button>
-        <a class="btn" href="mailto:your.email@example.com">Send a message</a>
+        <button class="btn primary" id="copyMail" data-mail="mohamed.aitabdelmalik@gmail.com">✉️ Copy my email</button>
+        <a class="btn" href="mailto:mohamed.aitabdelmalik@gmail.com">Send a message</a>
+        <a class="btn" href="cv.pdf" download>📄 Download CV</a>
       </div>
       <div class="socials">
-        <a class="social" href="https://github.com/your-username" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 24 24"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 23.5 12C23.5 5.7 18.3.5 12 .5z"/></svg></a>
-        <a class="social" href="https://www.linkedin.com/in/your-username" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.4 20.5h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.4V9h3.4v1.6c.5-.9 1.6-1.8 3.4-1.8 3.600 0 4.200 2.400 4.200 5.400v6.300zM5.300 7.400a2.100 2.100 0 1 1 0-4.200 2.100 2.100 0 0 1 0 4.200zM7.100 20.500H3.500V9h3.600v11.500z"/></svg></a>
-        <a class="social" href="https://twitter.com/your-username" target="_blank" rel="noopener" aria-label="X / Twitter" title="X"><svg viewBox="0 0 24 24"><path d="M18.200 2.300h3.300l-7.200 8.300 8.500 11.200h-6.700l-5.200-6.800-6 6.800H1.600l7.700-8.800L1.200 2.300H8l4.700 6.200 5.500-6.200zm-1.200 17.500h1.800L7.100 4.100H5.100L17 19.800z"/></svg></a>
-        <a class="social" href="https://www.instagram.com/your-username" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.200c3.200 0 3.600 0 4.800.1 3.300.1 4.800 1.700 4.900 4.900.1 1.300.1 1.600.1 4.800s0 3.600-.1 4.800c-.1 3.200-1.700 4.800-4.900 4.900-1.300.1-1.600.1-4.800.1s-3.600 0-4.800-.1c-3.300-.1-4.800-1.700-4.900-4.900C2.200 15.600 2.200 15.200 2.200 12s0-3.600.1-4.800C2.400 3.900 4 2.400 7.200 2.300 8.400 2.200 8.800 2.200 12 2.200zM12 0C8.700 0 8.300 0 7.100.1 2.700.3.300 2.700.1 7.100 0 8.300 0 8.700 0 12s0 3.700.1 4.900c.2 4.400 2.600 6.800 7 7C8.300 24 8.700 24 12 24s3.700 0 4.900-.1c4.400-.2 6.800-2.600 7-7 .1-1.200.1-1.600.1-4.900s0-3.700-.1-4.900c-.2-4.400-2.600-6.800-7-7C15.700 0 15.300 0 12 0zm0 5.800a6.200 6.200 0 1 0 0 12.400 6.200 6.200 0 0 0 0-12.400zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.400-11.800a1.400 1.400 0 1 0 0 2.900 1.400 1.400 0 0 0 0-2.900z"/></svg></a>
+        <a class="social" href="https://github.com/mohamedaitabdelmalik" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 24 24"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 23.5 12C23.5 5.7 18.3.5 12 .5z"/></svg></a>
+        <a class="social" href="https://www.linkedin.com/in/mohamed-ait-abdelmalik-a7b468195/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>
+        <a class="social" href="https://x.com/MoAitAbdelmalik" target="_blank" rel="noopener" aria-label="X / Twitter" title="X / Twitter"><svg viewBox="0 0 24 24"><path d="M18.2 2.3h3.3l-7.2 8.3 8.5 11.2h-6.7l-5.2-6.8-6 6.8H1.600l7.700-8.800L1.200 2.300H8l4.700 6.200 5.500-6.200zm-1.200 17.500h1.800L7.100 4.100H5.100L17 19.800z"/></svg></a>
+        <a class="social" href="https://mohamedaitabdelmalik.netlify.app/" target="_blank" rel="noopener" aria-label="Portfolio" title="Portfolio"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm6.9 9h-3a15.700 15.700 0 0 0-1.400-5.600A8 8 0 0 1 18.900 11zM12 4c.9 1.200 1.700 3.200 2 7H10c.3-3.800 1.100-5.800 2-7zM4.300 13h3a15.700 15.700 0 0 0 1.400 5.600A8 8 0 0 1 4.300 13zm3-2h-3a8 8 0 0 1 4.400-5.600A15.700 15.700 0 0 0 7.300 11zM12 20c-.9-1.200-1.700-3.200-2-7h4c-.3 3.800-1.100 5.800-2 7zm2.500-1.400A15.700 15.700 0 0 0 15.900 13h3a8 8 0 0 1-4.400 5.600z"/></svg></a>
+        <a class="social" href="mailto:mohamed.aitabdelmalik@gmail.com" aria-label="Email" title="Email"><svg viewBox="0 0 24 24"><path d="M2 5h20v14H2V5zm2 2v.5l8 5.500 8-5.500V7H4zm16 3-8 5.500L4 10v7h16v-7z"/></svg></a>
       </div>
     </div>
   </div>
 </section>
 
-<footer>© <span id="year"></span> Your Name · Built with ArcGIS Embeddable Components · Hosted on GitHub Pages</footer>
+<footer>© <span id="year"></span> Mohamed Ait Abdelmalik · Geomatics Specialist · Built with ArcGIS Embeddable Components · Hosted on GitHub Pages</footer>
 
 <button class="icon-btn" id="top" aria-label="Back to top">↑</button>
 <div id="toast">Copied!</div>
@@ -370,7 +539,7 @@ $('#burger').onclick=()=>$('#links').classList.toggle('open');
 $$('#links a').forEach(a=>a.onclick=()=>$('#links').classList.remove('open'));
 
 /* typing effect */
-const words=['GIS Analyst','Web Mapper','Data Visualizer','Spatial Thinker'];
+const words=['Geomatics Specialist','GIS Analyst','Webmapping Developer','Geoscientist','Remote Sensing Enthusiast'];
 let wi=0,ci=0,del=false; const tEl=$('#typing');
 (function type(){
   const w=words[wi];
@@ -380,19 +549,22 @@ let wi=0,ci=0,del=false; const tEl=$('#typing');
   ci+=del?-1:1; setTimeout(type,del?45:90);
 })();
 
-/* reveal + counters + bars */
+/* reveal, counters, bars */
 const io=new IntersectionObserver(es=>es.forEach(e=>{
-  if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}
+  if(e.isIntersecting){
+    e.target.classList.add('in');
+    e.target.querySelectorAll('.meter i').forEach(b=>b.style.width=b.dataset.w+'%');
+    io.unobserve(e.target);
+  }
 }),{threshold:.15});
 $$('.reveal').forEach(el=>io.observe(el));
 
 const cio=new IntersectionObserver(es=>es.forEach(e=>{
   if(!e.isIntersecting)return; cio.unobserve(e.target);
-  const n=+e.target.dataset.n; let c=0; const step=Math.max(1,Math.ceil(n/40));
-  const t=setInterval(()=>{c=Math.min(n,c+step);e.target.textContent=c;if(c>=n)clearInterval(t)},35);
+  const n=+e.target.dataset.n; let c=0; const step=Math.max(1,Math.ceil(n/30));
+  const t=setInterval(()=>{c=Math.min(n,c+step);e.target.textContent=c;if(c>=n)clearInterval(t)},60);
 }));
 $$('.count').forEach(el=>cio.observe(el));
-setTimeout(()=>$$('.bar i').forEach(b=>b.style.width=b.dataset.w+'%'),500);
 
 /* scroll progress, active link, back-to-top */
 const secs=[...$$('header, section')], navLinks=[...$$('#links a')];
@@ -406,7 +578,7 @@ addEventListener('scroll',()=>{
 },{passive:true});
 $('#top').onclick=()=>scrollTo({top:0,behavior:'smooth'});
 
-/* 3D tilt on hero card */
+/* 3D tilt */
 const tilt=$('#tilt');
 tilt.addEventListener('mousemove',e=>{
   const r=tilt.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
@@ -415,6 +587,7 @@ tilt.addEventListener('mousemove',e=>{
 tilt.addEventListener('mouseleave',()=>tilt.style.transform='');
 
 /* map controls */
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1800)}
 $('#fsBtn').onclick=()=>{
   const s=$('#mapShell');
   document.fullscreenElement?document.exitFullscreen():s.requestFullscreen?.();
@@ -428,11 +601,10 @@ $('#resetBtn').onclick=()=>{
 /* project filter */
 $$('.filters button').forEach(b=>b.onclick=()=>{
   $$('.filters button').forEach(x=>x.classList.remove('on')); b.classList.add('on');
-  $$('.project').forEach(p=>p.classList.toggle('hide',b.dataset.f!=='all'&&p.dataset.c!==b.dataset.f));
+  $$('.project').forEach(p=>p.classList.toggle('hide',b.dataset.f!=='all'&&!p.dataset.c.split(' ').includes(b.dataset.f)));
 });
 
 /* copy email */
-function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1800)}
 $('#copyMail').onclick=e=>{
   navigator.clipboard?.writeText(e.currentTarget.dataset.mail).then(()=>toast('Email copied ✔'),()=>toast('Copy failed'));
 };
